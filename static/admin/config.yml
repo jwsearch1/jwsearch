@@ -1,0 +1,61 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: static/assets
+public_folder: assets
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Image", name: image, widget: image, required: false}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list"}
+  - name: "pages"
+    label: "Pages"
+    folder: "src/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "page"}
+      - {label: "Content", name: "content", widget: "list", required: false, types: [
+          {label: "Section", name: "section", widget: "object", required: false, fields: [
+            {label: "Section Title", name: "sectiontitle", widget: "string", required: false},
+            {label: "Section ID", name: "sectionid", widget: "string", required: false},
+            {label: "Page H1 Title", name: "pagetitle", widget: "boolean", required: false, default: false},
+            {label: "Section Full Width", name: "sectionwidth", widget: "boolean", required: false, default: false},
+            {label: "Default Text Color", name: "textcolor", widget: "string", required: false},
+            {label: "Background Image", name: "backgroundimage", widget: "image", required: false},
+            {label: "Background Color", name: "backgroundcolor", widget: "string", required: false},
+            {label: "Section Value", name: "sectionvalue", widget: "list", required: false, types: [
+              {label: "Markdown", name: "markdown", widget: "object", required: false, fields: [
+                {label: "Markdown", name: "markdown", widget: "markdown", required: false}
+              ]},
+              {label: "Content Left Content Right", name: "contentleftcontentright", widget: "object", required: false, fields: [
+                {label: "Left Markdown", name: "leftmarkdown", widget: "markdown", required: false},
+                {label: "Right Markdown", name: "rightmarkdown", widget: "markdown", required: false}
+              ]},
+              {label: "Columns", name: "columns", widget: "object", required: false, fields: [
+                {label: "Number of columns", name: "columnnumber", widget: "number", required: false},
+                {label: "Column Markdown", name: "columnmarkdown", widget: "list", required: false, fields: [
+                {label: "Markdown", name: "markdown", widget: "markdown", required: false}
+                ]}
+              ]},
+              {label: "Form", name: "form", widget: "object", required: false, fields: [
+                {label: "Markdown", name: "markdown", widget: "markdown", required: false}
+              ]},
+              {label: "Blog List", name: "bloglist", widget: "object", description: "List of blog teasers will be rendered.", required: false, fields: [
+             ]} 
+            ]}
+          ]}
+        ]}
