@@ -4,6 +4,9 @@
     ) {
       edges {
         node {
+          fields{
+            slug
+          }
           objectID: id
           frontmatter {
             title

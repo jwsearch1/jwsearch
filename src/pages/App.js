@@ -1,5 +1,7 @@
 import algoliasearch from 'algoliasearch/lite';
 import React, { Component } from 'react';
+import ReactModal from 'react-modal';
+import { Link } from 'gatsby-plugin-modal-routing'
 import {
   InstantSearch,
   Hits,
@@ -15,15 +17,73 @@ import Img from "gatsby-image";
 import './App.css';
 
 
+
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
+
 const searchClient = algoliasearch(
   'QD0L8EBPLJ',
   'f25a3ede8804a4e652d1514b226f6d57'
 )
 
 class App extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      modalIsOpen: false
+    };
+
+    this.openModal = this.openModal.bind(this);
+    this.afterOpenModal = this.afterOpenModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    this.subtitle.style.color = '#f00';
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
+
+  componentDidMount() {
+    ReactModal.setAppElement('#modal')
+ }
+
   render() {
     return (
+      <div>
+      <div id ="modal">
+      <button onClick={this.openModal}>Open Modal</button>
+          <ReactModal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+        <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
+          <button onClick={this.closeModal}>close</button>
+          <div>I am a modal</div>
+        </ReactModal>
+      </div>
       <div className="ais-InstantSearch">
+
         <h1>JW Image Search</h1>
         <InstantSearch indexName="Images" searchClient={searchClient}>
           <div className="left-panel">
@@ -36,10 +96,11 @@ class App extends Component {
           </div>
           <div className="right-panel">
             <SearchBox />
-            <Hits hitComponent={Hit} />
+            <Hits className="hitter" hitComponent={Hit} />
             <Pagination />
           </div>
         </InstantSearch>
+      </div>
       </div>
     );
   }
@@ -48,7 +109,10 @@ class App extends Component {
 function Hit(props) {
   console.log(props)
   return (
-    <div>
+    <Link to={props.hit.fields.slug}
+    asModal
+  >
+
       <Img
       fluid={props.hit.image.childImageSharp.fluid}
       />
@@ -58,8 +122,9 @@ function Hit(props) {
       <div className="hit-description">
         <Highlight attribute="description" hit={props.hit} />
       </div>
-      <div className="hit-price">${props.hit.title}</div>
-    </div>
+      <div className="hit-price">{props.hit.title}</div>
+      </Link>
+    
   );
 }
 

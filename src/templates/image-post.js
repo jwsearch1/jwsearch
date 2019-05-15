@@ -1,11 +1,13 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/layout/layout'
 import Container from '../components/layout/container'
 import * as variable from '../components/variables'
 import styled from 'styled-components'
 import Img from "gatsby-image";
+import { Link } from 'gatsby-plugin-modal-routing'
+import { ModalRoutingContext } from 'gatsby-plugin-modal-routing'
 
 export const ImagePostTemplate = ({
   title,
@@ -15,15 +17,35 @@ export const ImagePostTemplate = ({
 
   return (
 
-      <Layout>
-      
-      </Layout>
+    <ModalRoutingContext>
+    {({ modal, closeTo }) => (
+      <div>
+        {modal ? (
+          <Link to={closeTo}>
+            Close
+          </Link>
+        ) : (
+          <header>
+            <h1>
+              Website Title
+            </h1>
+          </header>
+        )}
+
+        <h2>{title}</h2>
+
+        <Img
+      fluid={image.childImageSharp.fluid}
+      />
+      </div>
+    )}
+  </ModalRoutingContext>
   )
 }
 
 const ImagePost = ({ data }) => {
   const { markdownRemark: post } = data
-
+ console.log(post)
 
   return (
       <ImagePostTemplate
@@ -51,7 +73,7 @@ export const pageQuery = graphql`
         tags
         image{
           childImageSharp {
-            fluid(maxWidth: 756, maxHeight: 450) {
+            fluid(maxWidth: 1920, maxHeight: 1080) {
               ...GatsbyImageSharpFluid
             }
           }
