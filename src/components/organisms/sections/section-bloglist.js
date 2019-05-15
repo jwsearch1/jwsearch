@@ -29,7 +29,7 @@ export const BlogList = () => (
                 description
                 title
                 templateKey
-                date(formatString: "MMMM DD, YYYY")
+                date
                 image{
                   childImageSharp {
                     fluid(maxWidth: 345, maxHeight: 230) {
