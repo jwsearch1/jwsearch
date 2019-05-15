@@ -1,7 +1,8 @@
 ---
 templateKey: image-post
 title: Breast Augmentation Three
-author: Alexander Fountain
+doctor: Dr Nelson
+date: May 14th 19
 image: /assets/breat3.jpeg
 description: >-
   # Pugnem non edocuit quoque valent pudori
