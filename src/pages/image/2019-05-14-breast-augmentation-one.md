@@ -1,7 +1,8 @@
 ---
 templateKey: image-post
 title: Breast Augmentation One
-author: Alexander Fountain
+doctor: Dr Nelson
+date: May 14th 19
 image: /assets/breast1.jpg
 description: >-
   # Pugnem non edocuit quoque valent pudori
@@ -19,11 +20,6 @@ description: >-
 
   arcanaque satia: te vina quamvis Idaeis. Undae viscera!
 
-      rte_rt_search = class_card_megabyte;
-      vramComputer(computerDv.upload(duplex_drag_snmp.metal_baud.javascript(
-              storageCell, minisite_boot)), document);
-      var defaultIpv = undo_error_ivr(component + natWebAccess,
-              bitmap_variable_copy.meme.cdfsCodec(ascii, file_permalink));
 
   ## Delere tu sic dixit tandem erat utrumque
 
@@ -41,13 +37,13 @@ description: >-
   sub cubilia terret certaminis alitibus iunctior, in.
 
 
-  - Suo vulnera
+  * Suo vulnera
 
-  - Ubi odium puer atque genetrix ne humus
+  * Ubi odium puer atque genetrix ne humus
 
-  - Suis ferunt contiguas Aesoniden Solis subsedit demisit
+  * Suis ferunt contiguas Aesoniden Solis subsedit demisit
 
-  - Qui positasque pectore mortale manibus tibi recenti
+  * Qui positasque pectore mortale manibus tibi recenti
 
 
   ## Mittere mota oraque
@@ -56,9 +52,9 @@ description: >-
   Quam latentia regno; sidera lauru pectora utilis: maestam hastam et canna pone
 
   ipsa Tantalus pellis, animum. Trahens nomen grata cum invidit tamen iacent,
-  *dea
+  _dea
 
-  surrexere*, est est Tirynthia; hominum?
+  surrexere_, est est Tirynthia; hominum?
 
 
   ## Votum gaudet facta
@@ -82,10 +78,10 @@ description: >-
 
   inferre tandem ipse urget es terres. Adacta de sed adloquitur tamen auras
 
-  sermone, asper. Omnes quae ceciderunt faveas sine pro est: *dignamque*
+  sermone, asper. Omnes quae ceciderunt faveas sine pro est: _dignamque_
   Anaxarete
 
-  in *illo plumeus* signa.
+  in _illo plumeus_ signa.
 
 
   Ima agmina nunc sic et sed. Rhodopeius Aesonis: et Ausonio meosque error est,
@@ -95,7 +91,7 @@ description: >-
   posse quae denique est adeam tempus. Numenque ore cornua parte institerant
   artus
 
-  Oenopiam, et captis *Calliroe* ire fovet me reddere palato.
+  Oenopiam, et captis _Calliroe_ ire fovet me reddere palato.
 tags:
   - Breast Augmentation
 ---
