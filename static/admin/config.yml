@@ -14,7 +14,7 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "image-post"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Doctor", name: "doctor", widget: "relation", collection: "doctor", searchFields: ["name"], valueField: "name", displayFields: ["name"]}
+      - {label: "Doctor", name: "doctor", widget: "relation", collection: "doctor", searchFields: ["title"], valueField: "title", displayFields: ["title"]}
       - {label: "Date", name: "date", widget: "date", format: "MMM Do YY"}
       - {label: "Image", name: image, widget: image, required: true}
       - {label: "Description", name: "description", widget: "markdown"}
@@ -26,7 +26,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "doctor"}
-      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
       - {label: "Doctor Photo", name: "doctorphoto", widget: "image", required: true}
       - {label: "Description", name: "description", widget: "markdown"}
   - name: "pages"

@@ -7,9 +7,9 @@ import * as variable from '../components/variables'
 import styled from 'styled-components'
 import Img from "gatsby-image";
 
-export const ImagePostTemplate = ({
+export const DoctorTemplate = ({
   title,
-  image,
+  doctorphoto,
   slug,
 }) => {
 
@@ -21,25 +21,25 @@ export const ImagePostTemplate = ({
   )
 }
 
-const ImagePost = ({ data }) => {
+const DoctorPost = ({ data }) => {
   const { markdownRemark: post } = data
-
+  
 
   return (
-      <ImagePostTemplate
+      <DoctorTemplate
         content={post.html}
         frontmatter={post.frontmatter}
         title={post.frontmatter.title}
-        image={post.frontmatter.image}
+        image={post.frontmatter.doctorphoto}
         slug={post.fields.slug}
       />
   )
 }
 
-export default ImagePost
+export default DoctorPost
 
 export const pageQuery = graphql`
-  query ImagePostByID($id: String!) {
+  query DoctorPostByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html
@@ -48,7 +48,6 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
-        tags
         image{
           childImageSharp {
             fluid(maxWidth: 756, maxHeight: 450) {

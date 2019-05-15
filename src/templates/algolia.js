@@ -7,6 +7,8 @@
           objectID: id
           frontmatter {
             title
+            doctor
+            date
             tags
             image{
                 childImageSharp{
