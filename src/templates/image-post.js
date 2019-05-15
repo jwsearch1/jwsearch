@@ -23,6 +23,7 @@ export const ImagePostTemplate = ({
 
 const ImagePost = ({ data }) => {
   const { markdownRemark: post } = data
+  
 
   return (
       <ImagePostTemplate
