@@ -1,15 +1,13 @@
    const postQuery = `{
-    posts: allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "blog-post" } }}
+    images: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "image-post" } }}
     ) {
       edges {
         node {
           objectID: id
           frontmatter {
             title
-            date(formatString: "MMM DD, YYYY")
             tags
-            category
             image{
                 childImageSharp{
                   fluid (maxWidth:500, quality:50){
@@ -42,8 +40,8 @@
   const queries = [
     {
       query: postQuery,
-      transformer: ({ data }) => flatten(data.posts.edges),
-      indexName: `Posts`,
+      transformer: ({ data }) => flatten(data.images.edges),
+      indexName: `Images`,
       settings,
     },
   ]
