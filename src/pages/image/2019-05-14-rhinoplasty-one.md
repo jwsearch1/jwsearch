@@ -1,7 +1,8 @@
 ---
 templateKey: image-post
 title: Rhinoplasty One
-author: Alexander Fountain
+doctor: Dr Smith
+date: May 14th 19
 image: /assets/rhino1.jpeg
 description: >-
   # Pugnem non edocuit quoque valent pudori
