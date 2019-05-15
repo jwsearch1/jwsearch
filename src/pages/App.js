@@ -24,12 +24,14 @@ class App extends Component {
   render() {
     return (
       <div className="ais-InstantSearch">
-        <h1>React InstantSearch e-commerce demo</h1>
-        <InstantSearch indexName="Posts" searchClient={searchClient}>
+        <h1>JW Image Search</h1>
+        <InstantSearch indexName="Images" searchClient={searchClient}>
           <div className="left-panel">
             <ClearRefinements />
-            <h2>Brands</h2>
-            <RefinementList attribute="category" />
+            <h2>Tags</h2>
+            <RefinementList attribute="tags" />
+            <h2>Doctor</h2>
+            <RefinementList attribute="doctor" />
             <Configure hitsPerPage={4} />
           </div>
           <div className="right-panel">
