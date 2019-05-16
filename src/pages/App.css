@@ -1,8 +1,31 @@
 body {
   font-family: sans-serif;
-  padding: 1em;
+  padding: 0px;
 }
-
+.logo-menu{
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+}
+a{
+  border:0px;
+}
+.logo{
+  font-size:32px;
+  color:white;
+}
+.logo-menu nav a{
+  color:white;
+  text-decoration:none;
+}
+.search-box h1{
+  color:white;
+}
+.search-box{
+  width:50%;
+  margin:0 auto;
+  padding:100px 0px;
+}
 .ais-SearchBox {
   margin: 1em 0;
 }
@@ -11,17 +34,7 @@ body {
   margin-top: 1em;
 }
 
-.left-panel {
-  float: left;
-  width: 250px;
-}
-
-.right-panel {
-  margin-left: 260px;
-}
-
 .ais-InstantSearch {
-  max-width: 960px;
   overflow: hidden;
   margin: 0 auto;
 }
@@ -43,4 +56,69 @@ body {
   color: #888;
   font-size: 14px;
   margin-bottom: 0.5em;
+}
+.ais-Highlight-highlighted{
+  background-color:yellow;
+}
+.search-doctor{
+  font-weight:300;
+  font-size:12px;
+}
+.search-title{
+  padding: 10px 10px 10px 30px;
+}
+header{
+  background-image:url(/assets/desert.jpeg);
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+.filters{
+  display:flex;
+}
+.filters li{
+  list-style:none;
+}
+.search-container{
+  padding:0px 40px;
+}
+.ReactModalPortal{
+  position: relative;
+  z-index:10;
+}
+.ais-SearchBox-form{
+  display:flex;
+}
+.search-box button{
+  background: #fff;
+  border-radius: 2px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding:10px;
+  cursor:pointer;
+}
+.search-box svg{
+  width: 15px;
+  height: 15px;
+  fill:#5e5e5e;
+}
+.search-box input{
+  width:100%;
+  padding: 14.4px 16px;
+  -webkit-appearance: none;
+  border:0px;
+  display: block;
+    font-size: 16px;
+    line-height: 25px;
+    margin-top: 0;
+    margin-bottom: 9px;
+    font-weight: 300;
+    margin-bottom: 0;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    padding: 8px 16px;
+    padding-right: 0;
+    -webkit-appearance: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }

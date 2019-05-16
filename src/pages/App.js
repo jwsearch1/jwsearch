@@ -15,6 +15,69 @@ import {
 import PropTypes from 'prop-types';
 import Img from "gatsby-image";
 import './App.css';
+import styled from 'styled-components'
+
+const SearchFilter = styled.div`
+
+`
+
+const SearchResults = styled.div`
+.ais-Hits-list{
+  margin:0px;
+  padding:0px;
+  -moz-column-count: 3;
+  -webkit-column-count: 3;
+  column-count: 3;
+  -moz-column-gap: 38px;
+  -webkit-column-gap: 38px;
+  column-gap: 38px;
+  position: relative;
+}
+.ais-Hits-item{
+  display: inline-block;
+  margin: 0 0 2em;
+  width: 100%;
+  counter-increment: item-counter;
+  position:relative;
+  background-color:white;
+  .image-result{
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.29);
+    display:block;
+    border:0px;
+  }
+  &:before{
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 13px;
+      width: 2em;
+      height: 2em;
+      line-height: 2em;
+      text-align: center;
+      font-weight: bold;
+      background-color: black;
+      color:white;
+      z-index:3;
+      content: counter(item-counter);
+  }
+}
+.ais-Hits-list:hover li { opacity: 0.3; }
+.ais-Hits-list:hover li:hover { 
+  opacity: 1;
+}
+.hit-title{
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: #569592;
+  color:white;
+  margin:0px;
+  padding:10px;
+}
+.no-title-container{
+  padding:10px;
+}
+`
+
 
 
 
@@ -68,36 +131,37 @@ class App extends Component {
   render() {
     return (
       <div>
-      <div id ="modal">
-      <button onClick={this.openModal}>Open Modal</button>
-          <ReactModal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-          contentLabel="Example Modal"
-        >
-        <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
-          <button onClick={this.closeModal}>close</button>
-          <div>I am a modal</div>
-        </ReactModal>
-      </div>
+        <div id="modal"></div>
       <div className="ais-InstantSearch">
-
-        <h1>JW Image Search</h1>
         <InstantSearch indexName="Images" searchClient={searchClient}>
-          <div className="left-panel">
-            <ClearRefinements />
+          <header>
+          <div className="logo-menu">
+          <div class="logo">JW Logo</div>
+          <nav>
+            <a href="/admin">Upload</a>
+          </nav>
+          </div>
+          <div className="search-box">
+          <h1>JW Image seach.</h1>
+          <SearchBox />
+          </div>
+          </header>
+          <div className="search-container">
+          <SearchFilter className="filters">
+            <div className="filter-tags">
             <h2>Tags</h2>
             <RefinementList attribute="tags" />
+            </div>
+            <div className="filter-doctor">
             <h2>Doctor</h2>
             <RefinementList attribute="doctor" />
-            <Configure hitsPerPage={4} />
-          </div>
-          <div className="right-panel">
-            <SearchBox />
+            </div>
+            <ClearRefinements />
+          </SearchFilter>
+          <SearchResults>
             <Hits className="hitter" hitComponent={Hit} />
             <Pagination />
+          </SearchResults>
           </div>
         </InstantSearch>
       </div>
@@ -109,20 +173,18 @@ class App extends Component {
 function Hit(props) {
   console.log(props)
   return (
-    <Link to={props.hit.fields.slug}
+    <Link className="image-result" to={props.hit.fields.slug}
     asModal
-  >
-
+    >
+    <div className="search-title">
+    <Highlight attribute="title" hit={props.hit} />
+    <div><Highlight className="search-doctor" attribute="doctor" hit={props.hit} /></div>
+    </div>
+    <div className="no-title-container">
       <Img
       fluid={props.hit.image.childImageSharp.fluid}
       />
-      <div className="hit-name">
-        <Highlight attribute="name" hit={props.hit} />
       </div>
-      <div className="hit-description">
-        <Highlight attribute="description" hit={props.hit} />
-      </div>
-      <div className="hit-price">{props.hit.title}</div>
       </Link>
     
   );
