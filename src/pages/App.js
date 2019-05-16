@@ -15,7 +15,8 @@ import {
 import PropTypes from 'prop-types';
 import Img from "gatsby-image";
 import './App.css';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import InfiniteScroll from 'react-infinite-scroller';
 
 const SearchFilter = styled.div`
 
