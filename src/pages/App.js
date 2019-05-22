@@ -1,6 +1,6 @@
-import algoliasearch from 'algoliasearch/lite';
-import React, { Component } from 'react';
-import ReactModal from 'react-modal';
+import algoliasearch from 'algoliasearch/lite'
+import React, { Component } from 'react'
+import ReactModal from 'react-modal'
 import { Link } from 'gatsby-plugin-modal-routing'
 import {
   InstantSearch,
@@ -131,7 +131,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div>        
         <div id="modal"></div>
       <div className="ais-InstantSearch">
         <InstantSearch indexName="Images" searchClient={searchClient}>
