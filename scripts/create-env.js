@@ -1,0 +1,7 @@
+const fs = require('fs')
+fs.writeFileSync('./.env', `GATSBY_ALGOLIA_APP_ID=${process.env.GATSBY_ALGOLIA_APP_ID}\n`)
+fs.writeFileSync('./.env', `GATSBY_ALGOLIA_SEARCH_KEY=${process.env.GATSBY_ALGOLIA_SEARCH_KEY}\n`)
+fs.writeFileSync('./.env', `ALGOLIA_ADMIN_KEY=${process.env.ALGOLIA_ADMIN_KEY}\n`)
+fs.writeFileSync('./.env', `AUTH0_DOMAIN=${process.env.AUTH0_DOMAIN}\n`)
+fs.writeFileSync('./.env', `AUTH0_CLIENTID=${process.env.AUTH0_CLIENTID}\n`)
+fs.writeFileSync('./.env', `AUTH0_CALLBACK=${process.env.AUTH0_CALLBACK}\n`)
