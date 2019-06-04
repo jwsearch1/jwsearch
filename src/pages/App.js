@@ -2,6 +2,7 @@ import algoliasearch from 'algoliasearch/lite'
 import React, { Component } from 'react'
 import ReactModal from 'react-modal'
 import { Link } from 'gatsby-plugin-modal-routing'
+import Mobilemenu from '../components/mobilemenu'
 import {
   InstantSearch,
   Hits,
@@ -17,6 +18,7 @@ import Img from "gatsby-image";
 import './App.css';
 import styled from 'styled-components';
 import InfiniteScroll from 'react-infinite-scroller';
+import jwlogo from "../images/jwlogo.png"
 
 const SearchFilter = styled.div`
 
@@ -45,21 +47,6 @@ const SearchResults = styled.div`
     box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.29);
     display:block;
     border:0px;
-  }
-  &:before{
-      position: absolute;
-      top: 0;
-      left: 0;
-      font-size: 13px;
-      width: 2em;
-      height: 2em;
-      line-height: 2em;
-      text-align: center;
-      font-weight: bold;
-      background-color: black;
-      color:white;
-      z-index:3;
-      content: counter(item-counter);
   }
 }
 .ais-Hits-list:hover li { opacity: 0.3; }
@@ -95,8 +82,8 @@ const customStyles = {
 
 
 const searchClient = algoliasearch(
-  'QD0L8EBPLJ',
-  'f25a3ede8804a4e652d1514b226f6d57'
+  process.env.GATSBY_ALGOLIA_APP_ID,
+  process.env.ALGOLIA_ADMIN_KEY
 )
 
 class App extends Component {
@@ -137,28 +124,20 @@ class App extends Component {
         <InstantSearch indexName="Images" searchClient={searchClient}>
           <header>
           <div className="logo-menu">
-          <div class="logo">JW Logo</div>
-          <nav>
-            <a href="/admin">Upload</a>
+          <div class="logo"><img src={jwlogo} alt="Logo" /></div>
+          <nav className="main-nav">
+            <a className="upload" href="/admin">Upload</a>
+            <Mobilemenu />
           </nav>
           </div>
+          <div className="below-header">
           <div className="search-box">
           <h1>JW Image seach.</h1>
           <SearchBox />
           </div>
+          </div>
           </header>
           <div className="search-container">
-          <SearchFilter className="filters">
-            <div className="filter-tags">
-            <h2>Tags</h2>
-            <RefinementList attribute="tags" />
-            </div>
-            <div className="filter-doctor">
-            <h2>Doctor</h2>
-            <RefinementList attribute="doctor" />
-            </div>
-            <ClearRefinements />
-          </SearchFilter>
           <SearchResults>
             <Hits className="hitter" hitComponent={Hit} />
             <Pagination />

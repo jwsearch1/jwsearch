@@ -4,12 +4,18 @@ import { Link } from 'gatsby'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from "styled-components"
 import * as variable from './variables.js'
-import { FaFacebookF } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa";
+import {
+  ClearRefinements,
+  RefinementList,
+} from 'react-instantsearch-dom';
+
+const SearchFilter = styled.div`
+
+`
+
 const MobileContainer = styled.div`
-  display:none;
   position:relative;
+  max-height: 35px;
   @media (max-width: ${variable.tabletWidth}) {
     display:block;
   }
@@ -41,7 +47,7 @@ const MobileContainer = styled.div`
     width: 36px;
   }
   .bm-burger-bars {
-    background: white;
+    background: black;
   }
   .bm-cross {
     background: #bdc3c7;
@@ -83,14 +89,17 @@ const Mobilemenu = () => (
       {data.site.siteMetadata.menuLinks.map((menuitem, index) =>(
         <li key={index}><Link to={menuitem.link}>{menuitem.name}</Link></li>
       ))}
-      <li className="mobile-contact"><Link to="/contact">Contact</Link></li>
-      <li className="mobile-quote"><Link to="/contact">FREE QUOTE</Link></li>
-      <li className="number"><span>US. CA.</span><a href="tel:+1-763-742-2022">+1-763-742-2022</a></li>
-      <div className="menu-social-holder">
-      <li className="menu-social"><a href="#"><FaFacebookF></FaFacebookF></a></li>
-      <li className="menu-social"><a href="#"><FaTwitter></FaTwitter></a></li>
-      <li className="menu-social"><a href="#"><FaLinkedinIn></FaLinkedinIn></a></li>
-      </div>
+          <SearchFilter className="filters">
+            <div className="filter-tags">
+            <h3>Tags</h3>
+            <RefinementList attribute="tags" />
+            </div>
+            <div className="filter-doctor">
+            <h3>Doctor</h3>
+            <RefinementList attribute="doctor" />
+            </div>
+            <ClearRefinements />
+          </SearchFilter>
     </Menu>
     </MobileContainer>
   </>

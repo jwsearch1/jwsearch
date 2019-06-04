@@ -1,6 +1,13 @@
 const queries = require(`${__dirname}/src/templates/algolia`)
 
-require('dotenv').config()
+let activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+
+console.log(`Using environment config: '${activeEnv}'`)
+
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
   siteMetadata: {
@@ -11,28 +18,8 @@ module.exports = {
     logo: `/src/images/logo_no_comp.png`,
     menuLinks:[
       {
-         name:'services',
-         link:'/services'
-      },
-      {
-         name:'industries',
-         link:'/industries'
-      },
-      {
-        name:'about us',
-        link:'/about-us'
-      },
-      {
-        name:'case study',
-        link:'/case-study'
-      },
-      {
-        name:'blog',
-        link:'/blog'
-      },
-      {
-        name:'contact',
-        link:'/contact'
+         name:'logout',
+         link:'/logout'
       }
     ],
   },

@@ -8,6 +8,11 @@ import logo from "../../images/underlogo.png"
 import * as variable from '../variables'
 import Mobilemenu from '../mobilemenu'
 
+const AboveHeader = styled.div`
+padding:20px 0px;
+
+`;
+
 const HeaderStyle = styled.header`
   display:flex;
   justify-content:center;
@@ -58,9 +63,13 @@ const HeaderStyle = styled.header`
 const Header = () => (
   <HeaderStyle>
       <Container className="header-menu-logo">
+      <AboveHeader>
+        test
+      <Link className="mobile-logo"to="/"><img src={logo} alt="logo" /></Link>
+      </AboveHeader>
       <Menu>
       </Menu>
-      <Link className="mobile-logo"to="/"><img src={logo} alt="logo" /></Link>
+
       <Mobilemenu />
       </Container>
   </HeaderStyle>
