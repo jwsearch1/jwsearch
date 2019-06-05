@@ -84,8 +84,8 @@ const customStyles = {
 
 
 const searchClient = algoliasearch(
-  process.env.GATSBY_ALGOLIA_APP_ID,
-  process.env.ALGOLIA_ADMIN_KEY
+  '82F8AVAEI8',
+  'eb1f34dcb78616a911319ddb0d8fdbff'
 )
 
 class App extends Component {
