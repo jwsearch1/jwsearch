@@ -16,9 +16,9 @@ export const isAuthenticated = () => {
 
 const auth = isBrowser
   ? new auth0.WebAuth({
-      domain: process.env.AUTH0_DOMAIN,
-      clientID: process.env.AUTH0_CLIENTID,
-      redirectUri: process.env.AUTH0_CALLBACK,
+      domain: 'fountain1986.auth0.com',
+      clientID: 'd2HtbVJm1vlrRL4g4x82d1JPzL8ttXMN',
+      redirectUri: 'https://jw-search.netlify.com',
       responseType: "token id_token",
       scope: "openid profile email",
     })
