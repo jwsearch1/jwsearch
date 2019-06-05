@@ -20,8 +20,6 @@ import styled from 'styled-components';
 import InfiniteScroll from 'react-infinite-scroller';
 import jwlogo from "../images/jwlogo.png"
 
-require('dotenv').config()
-
 const SearchFilter = styled.div`
 
 `

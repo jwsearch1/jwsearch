@@ -2,7 +2,6 @@ import auth0 from "auth0-js"
 
 export const isBrowser = typeof window !== "undefined"
 
-require('dotenv').config()
 
 const tokens = {
   idToken: false,
