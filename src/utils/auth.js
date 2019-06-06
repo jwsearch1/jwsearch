@@ -18,7 +18,7 @@ const auth = isBrowser
   ? new auth0.WebAuth({
       domain: 'fountain1986.auth0.com',
       clientID: 'd2HtbVJm1vlrRL4g4x82d1JPzL8ttXMN',
-      redirectUri: 'http://localhost:8000',
+      redirectUri: 'https://jw-search.netlify.com',
       responseType: "token id_token",
       scope: "openid profile email",
     })
