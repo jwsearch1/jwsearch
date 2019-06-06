@@ -8,6 +8,7 @@ import {
   ClearRefinements,
   RefinementList,
 } from 'react-instantsearch-dom';
+import { login, logout, isAuthenticated, getProfile } from "../utils/auth"
 
 const SearchFilter = styled.div`
 
@@ -99,9 +100,15 @@ const Mobilemenu = () => (
             </div>
             </div>
           </SearchFilter>
-          {data.site.siteMetadata.menuLinks.map((menuitem, index) =>(
-        <li key={index}><Link to={menuitem.link}>{menuitem.name}</Link></li>
-      ))}
+          <a
+          href="#logout"
+          onClick={e => {
+            logout()
+            e.preventDefault()
+          }}
+        >
+          Log Out
+        </a>
     </Menu>
     </MobileContainer>
   </>
