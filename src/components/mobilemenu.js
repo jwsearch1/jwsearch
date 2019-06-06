@@ -86,20 +86,22 @@ const Mobilemenu = () => (
     <a href="#" className="bm-burger-button .hamburger-box">
     </a>
     <Menu right>
-      {data.site.siteMetadata.menuLinks.map((menuitem, index) =>(
-        <li key={index}><Link to={menuitem.link}>{menuitem.name}</Link></li>
-      ))}
           <SearchFilter className="filters">
+            <h2>Filter</h2>
+            <div className="filters-inner">
             <div className="filter-tags">
-            <h3>Tags</h3>
+            <h3>Procedure</h3>
             <RefinementList attribute="tags" />
             </div>
             <div className="filter-doctor">
-            <h3>Doctor</h3>
+            <h3>Surgeon</h3>
             <RefinementList attribute="doctor" />
             </div>
-            <ClearRefinements />
+            </div>
           </SearchFilter>
+          {data.site.siteMetadata.menuLinks.map((menuitem, index) =>(
+        <li key={index}><Link to={menuitem.link}>{menuitem.name}</Link></li>
+      ))}
     </Menu>
     </MobileContainer>
   </>

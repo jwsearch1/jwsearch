@@ -18,7 +18,7 @@ const auth = isBrowser
   ? new auth0.WebAuth({
       domain: 'fountain1986.auth0.com',
       clientID: 'd2HtbVJm1vlrRL4g4x82d1JPzL8ttXMN',
-      redirectUri: 'https://jw-search.netlify.com',
+      redirectUri: 'http://localhost:8000',
       responseType: "token id_token",
       scope: "openid profile email",
     })
@@ -66,10 +66,12 @@ const setSession = (cb = () => {}) => (err, authResult) => {
 
 export const checkSession = callback => {
   const isLoggedIn = localStorage.getItem("isLoggedIn")
+  console.log(localStorage)
   console.log({ isLoggedIn })
   if (isLoggedIn === "false") {
     console.log("Not logged in")
     callback()
+    auth.checkSession({}, setSession(callback))
     return
   }
   auth.checkSession({}, setSession(callback))

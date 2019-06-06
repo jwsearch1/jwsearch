@@ -19,6 +19,8 @@ import './App.css';
 import styled from 'styled-components';
 import InfiniteScroll from 'react-infinite-scroller';
 import jwlogo from "../images/jwlogo.png"
+import { Global, css } from "@emotion/core"
+import * as variable from '../components/variables'
 
 const SearchFilter = styled.div`
 
@@ -35,6 +37,22 @@ const SearchResults = styled.div`
   -webkit-column-gap: 38px;
   column-gap: 38px;
   position: relative;
+  @media (max-width: ${variable.tabletWidth}) {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+    -moz-column-gap: 20px;
+    -webkit-column-gap: 20px;
+    column-gap: 20px;
+  }
+  @media (max-width: ${variable.mobileWidth}) {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+    -moz-column-gap: 10px;
+    -webkit-column-gap: 10px;
+    column-gap: 10px;
+  }
 }
 .ais-Hits-item{
   display: inline-block;
@@ -118,7 +136,15 @@ class App extends Component {
 
   render() {
     return (
-      <div>        
+      <div>
+        <Global
+      styles={css`
+        html body #netlify-identity-widget {
+          display:none !important;
+          visibility:hidden !important;;
+        }
+      `}
+        />        
         <div id="modal"></div>
       <div className="ais-InstantSearch">
         <InstantSearch indexName="Images" searchClient={searchClient}>
@@ -156,15 +182,15 @@ function Hit(props) {
     <Link className="image-result" to={props.hit.fields.slug}
     asModal
     >
-    <div className="search-title">
-    <Highlight attribute="title" hit={props.hit} />
-    <div><Highlight className="search-doctor" attribute="doctor" hit={props.hit} /></div>
-    </div>
+
     <div className="no-title-container">
       <Img
       fluid={props.hit.image.childImageSharp.fluid}
       />
       </div>
+      <div className="search-title">
+      <Highlight className="search-doctor" attribute="doctor" hit={props.hit} /> - <Highlight attribute="title" hit={props.hit} />
+    </div>
       </Link>
     
   );

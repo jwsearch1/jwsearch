@@ -32,6 +32,12 @@ a{
   padding:100px 0px;
   color:white;
 }
+@media (max-width: 800px){
+  .search-box{
+    width:100%;
+    padding:100px 20px;
+  }
+}
 .ais-SearchBox {
   margin: 1em 0;
 }
@@ -67,8 +73,8 @@ a{
   background-color:yellow;
 }
 .search-doctor{
-  font-weight:300;
-  font-size:12px;
+  /* font-weight:300;
+  font-size:12px; */
 }
 .search-title{
   padding: 10px 10px 10px 30px;
@@ -90,10 +96,30 @@ a{
 }
 .bm-menu-wrap h3{
   color:white;
+  text-decoration:underline;
+}
+.bm-menu-wrap h2{
+  color:white;
 }
 .bm-menu-wrap ul{
   margin:0px;
   padding:0px;
+}
+li.bm-item a{
+  text-decoration:underline !important;
+}
+.filters{
+
+}
+.ais-RefinementList{
+  padding-left:20px;
+}
+.filters-inner{
+  margin-top:5px;
+  margin-bottom:20px;
+}
+.filters:focus{
+  outline: none;
 }
 .ais-RefinementList-item--selected{
   color:#28B7C5 !important;
@@ -118,7 +144,7 @@ a{
   list-style:none;
 }
 .search-container{
-  padding:0px 40px;
+  padding:40px 40px;
 }
 .ReactModalPortal{
   position: relative;
