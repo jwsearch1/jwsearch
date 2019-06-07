@@ -108,11 +108,9 @@ module.exports = {
     `gatsby-plugin-lodash`,
     `gatsby-plugin-glamor`,
     `gatsby-plugin-sitemap`,
-    // `gatsby-plugin-netlify-cms`,
-    // `gatsby-plugin-netlify`, // make sure to keep it last in the array
-    
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
+    `gatsby-plugin-netlify-cms`,
+    'gatsby-plugin-offline',
+    `gatsby-plugin-netlify`, 
+
   ],
 }
