@@ -1,7 +1,7 @@
 ---
 templateKey: image-post
 title: Breast Augmentation One
-doctor: Dr Nelson
+doctor: Dr. Smith
 date: May 14th 19
 image: /assets/breast1.jpg
 description: >-
