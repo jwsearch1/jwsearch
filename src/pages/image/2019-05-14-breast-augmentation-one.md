@@ -1,6 +1,6 @@
 ---
 templateKey: image-post
-title: Breast Augmentation One
+title: Breast Augmentation with Lift
 doctor: Dr. Smith
 date: May 14th 19
 image: /assets/breast1.jpg
