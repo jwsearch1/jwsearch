@@ -77,7 +77,6 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
-        tags
         doctor
         image{
           childImageSharp {
