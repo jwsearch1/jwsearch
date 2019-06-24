@@ -9,7 +9,6 @@
           }
           objectID: id
           frontmatter {
-            title
             doctor
             date
             patientname

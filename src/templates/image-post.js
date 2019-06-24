@@ -16,7 +16,6 @@ const ImagePoster = styled.div`
 `
 
 export const ImagePostTemplate = ({
-  title,
   image,
   slug,
   doctor,
@@ -42,7 +41,7 @@ export const ImagePostTemplate = ({
         <Img
       fluid={image.childImageSharp.fluid}
       />
-              <h2><span>{title}</span><span> - {doctor}</span></h2>
+              <h2><span></span><span> - {doctor}</span></h2>
       </ImagePoster>
     )}
   </ModalRoutingContext>
@@ -56,7 +55,6 @@ const ImagePost = ({ data }) => {
       <ImagePostTemplate
         content={post.html}
         frontmatter={post.frontmatter}
-        title={post.frontmatter.title}
         doctor={post.frontmatter.doctor}
         image={post.frontmatter.image}
         slug={post.fields.slug}
@@ -76,8 +74,12 @@ export const pageQuery = graphql`
         slug
       }
       frontmatter {
-        title
         doctor
+        patientname
+        surgeryarea
+        procedure
+        postop
+        surgerydate
         image{
           childImageSharp {
             fluid(maxWidth: 1920, maxHeight: 1080) {

@@ -189,7 +189,12 @@ function Hit(props) {
       />
       </div>
       <div className="search-title">
-      <Highlight className="search-doctor" attribute="doctor" hit={props.hit} /> - <Highlight attribute="title" hit={props.hit} />
+      <h4><Highlight attribute="procedure" hit={props.hit} /></h4>
+      <div><span class="thelabel"><strong>Patient Name:</strong> </span><Highlight className="search-name" attribute="patientname" hit={props.hit} /></div>
+      <div><span class="thelabel"><strong>Surgery Date:</strong> </span><Highlight className="search-surgery-date" attribute="surgerydate" hit={props.hit} /></div>
+      <div><span class="thelabel"><strong>Photo Date:</strong> </span><Highlight className="search-photo-date" attribute="date" hit={props.hit} /></div>
+      <div><span class="thelabel"><strong>Post-Op Time Frame:</strong> </span><Highlight className="search-post-op" attribute="postop" hit={props.hit} /></div>
+      <div><span class="thelabel"><strong>Surgeon Name:</strong> </span><Highlight className="search-surgeon-name" attribute="doctor" hit={props.hit} /></div>
     </div>
       </Link>
     

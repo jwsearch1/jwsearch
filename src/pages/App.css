@@ -72,6 +72,9 @@ a{
 .ais-Highlight-highlighted{
   background-color:yellow;
 }
+.ais-RefinementList-count{
+  display:none;
+}
 .search-doctor{
   /* font-weight:300;
   font-size:12px; */

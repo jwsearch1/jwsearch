@@ -90,13 +90,21 @@ const Mobilemenu = () => (
           <SearchFilter className="filters">
             <h2>Filter</h2>
             <div className="filters-inner">
-            <div className="filter-tags">
+            <div className="filter-procedure">
             <h3>Procedure</h3>
-            <RefinementList attribute="tags" />
+            <RefinementList attribute="procedure" />
             </div>
             <div className="filter-doctor">
             <h3>Surgeon</h3>
             <RefinementList attribute="doctor" />
+            </div>
+            <div className="filter-post-surgery-date">
+            <h3>Surgery Date</h3>
+            <RefinementList attribute="surgerydate" />
+            </div>
+            <div className="filter-post-photo-date">
+            <h3>Photo Date</h3>
+            <RefinementList attribute="date" />
             </div>
             </div>
           </SearchFilter>
