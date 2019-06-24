@@ -12,7 +12,11 @@
             title
             doctor
             date
-            tags
+            patientname
+            surgeryarea
+            procedure
+            postop
+            surgerydate
             image{
                 childImageSharp{
                   fluid (maxWidth:500, quality:50){
