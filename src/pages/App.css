@@ -80,9 +80,10 @@ a{
   padding: 10px 10px 10px 30px;
 }
 .below-header{
-  background-image:url(/assets/desert.jpeg);
+  background-image:url(/assets/jwback.jpg);
   background-size:cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 .logo-menu nav.main-nav{
   display: flex;
