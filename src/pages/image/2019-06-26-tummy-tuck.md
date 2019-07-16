@@ -6,8 +6,8 @@ doctor: Dr. Jeffery Weinzweig
 surgeryarea: Body
 procedure: Abdominoplasty
 postop: 1 wk post-op
-date: Jun 24th 19
-surgerydate: May 1st 19
+date: '86424'
+surgerydate: '-2332799'
 image: /assets/2l5yaqzcejb3vrhf.jpg
 ---
 
