@@ -6,8 +6,8 @@ doctor: Dr. Jeffery Weinzweig
 surgeryarea: Breast
 procedure: Breast Lift
 postop: 1 wk post-op
-date: '-1123190'
-surgerydate: '-86387'
+date: '-1209590'
+surgerydate: '-2159987'
 image: /assets/before-and-after-tachmes.jpg
 ---
 
