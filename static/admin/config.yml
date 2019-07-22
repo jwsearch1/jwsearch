@@ -19,6 +19,6 @@ collections:
       - {label: "Surgery Area(s)", name: "surgeryarea", widget: "select", options: ["Breast", "Body", "Face"]}
       - {label: "Procedure Name", name: "procedure", widget: "select", options: ["Breast Lift", "Breast Augmentation", "Breast Reduction","Liposuction", "Abdominoplasty", "Thigh Lift","Arm Lift", "BBL", "Fat Transfer", "Nose Surgery", "Facelift", "Ear Surgery", "Lip Lift", "FFS", "Chin Surgery", "Forehead Lift", "Cheek Augmentation"]}
       - {label: "POST-OP Time Frame", name: "postop", widget: "select", options: ["Pre-Op", "1 wk post-op", "2 wk post-op", "3 mo post-op", "4 mo post-op", "5 mo post-op", "6 mo post-op","7 mo post-op","8 mo post-op","9 mo post-op","10 mo post-op","11 mo post-op","12 mo post-op"]}
-      - {label: "Photo Date", name: "date", widget: "date", format: "MMM Do YY"}
-      - {label: "Surgery Date", name: "surgerydate", widget: "date", format: "MMM Do YY"}
+      - {label: "Photo Date", name: "date", widget: "datetime", format: "X"}
+      - {label: "Surgery Date", name: "surgerydate", widget: "datetime", format: "X"}
       - {label: "Image", name: image, widget: image, required: true}

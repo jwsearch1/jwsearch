@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `Underguard Teleservices`,
     description: `Underguard Teleservices Description.`,
-    siteUrl: `https://staging.underguard.netlify.com`,
+    siteUrl: `localhost:8000`,
     author: `@alexanderfountain`,
     logo: `/src/images/logo_no_comp.png`,
     menuLinks:[
@@ -108,9 +108,9 @@ module.exports = {
     `gatsby-plugin-lodash`,
     `gatsby-plugin-glamor`,
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-netlify-cms`,
-    'gatsby-plugin-offline',
-    `gatsby-plugin-netlify`, 
+    // `gatsby-plugin-netlify-cms`,
+    // 'gatsby-plugin-offline',
+    // `gatsby-plugin-netlify`, 
 
   ],
 }

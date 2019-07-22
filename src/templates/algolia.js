@@ -6,6 +6,8 @@
         node {
           fields{
             slug
+            formatdate
+            formatsurgerydate
           }
           objectID: id
           frontmatter {
@@ -36,9 +38,10 @@
   }`
   
   const flatten = arr =>
-    arr.map(({ node: { frontmatter, ...rest } }) => ({
+    arr.map(({ node: { fields, frontmatter, ...rest } }) => ({
       ...frontmatter,
       ...rest,
+      ...fields,
     }))
   const settings = { 
       attributesToSnippet: [`excerpt:20`] ,

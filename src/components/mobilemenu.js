@@ -7,6 +7,9 @@ import * as variable from './variables.js'
 import {
   ClearRefinements,
   RefinementList,
+  SortBy,
+  RangeSlider,
+  RangeInput
 } from 'react-instantsearch-dom';
 import { login, logout, isAuthenticated, getProfile } from "../utils/auth"
 
@@ -98,14 +101,14 @@ const Mobilemenu = () => (
             <h3>Surgeon</h3>
             <RefinementList attribute="doctor" />
             </div>
-            <div className="filter-post-surgery-date">
-            <h3>Surgery Date</h3>
-            <RefinementList attribute="surgerydate" />
-            </div>
-            <div className="filter-post-photo-date">
-            <h3>Photo Date</h3>
-            <RefinementList attribute="date" />
-            </div>
+            <SortBy
+              defaultRefinement="Images"
+                items={[
+                  { value: 'Images', label: 'Sort by Photo Date' },
+                  { value: 'photo_date_asc', label: 'Photo Date asc.' },
+                  { value: 'photo_date_desc', label: 'Photo Date desc.' },
+                ]}
+              />
             </div>
           </SearchFilter>
           <a

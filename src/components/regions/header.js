@@ -64,7 +64,6 @@ const Header = () => (
   <HeaderStyle>
       <Container className="header-menu-logo">
       <AboveHeader>
-        test
       <Link className="mobile-logo"to="/"><img src={logo} alt="logo" /></Link>
       </AboveHeader>
       <Menu>

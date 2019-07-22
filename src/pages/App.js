@@ -177,9 +177,8 @@ class App extends Component {
 }
 
 function Hit(props) {
-  console.log(props)
   return (
-    <Link className="image-result" to={props.hit.fields.slug}
+    <Link className="image-result" to={props.hit.slug}
     asModal
     >
 

@@ -75,7 +75,26 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value,
     })
     if (frontmatter) {
+      const { date } = frontmatter
+      if(date){
+        const newdate = Number(date)
+        createNodeField({
+          name: `formatdate`,
+          node,
+          value: newdate,
+        })
+      }
+      const { surgerydate } = frontmatter
+      if(surgerydate){
+        const newsurgerydate = Number(surgerydate)
+        createNodeField({
+          name: `formatsurgerydate`,
+          node,
+          value: newsurgerydate,
+        })
+      }
       const { content } = frontmatter
+      
       if (content) {
         const { backgroundimage } = content
         if (backgroundimage) {
