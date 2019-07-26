@@ -39,7 +39,7 @@ export const logout = () => {
   localStorage.setItem("isLoggedIn", false)
 
   auth.logout({
-    returnTo: 'http://localhost:8000',
+    returnTo: 'https://jw-search.netlify.com',
   })
 }
 
