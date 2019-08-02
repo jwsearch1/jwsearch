@@ -2,7 +2,10 @@ import algoliasearch from 'algoliasearch/lite'
 import React, { Component } from 'react'
 import ReactModal from 'react-modal'
 import { Link } from 'gatsby-plugin-modal-routing'
+import { login, logout, isAuthenticated, getProfile } from '../utils/auth'
 import Mobilemenu from '../components/mobilemenu'
+import moment from 'moment'
+import { navigate } from 'gatsby'
 import {
   InstantSearch,
   Hits,
@@ -106,6 +109,8 @@ const searchClient = algoliasearch(
 
 class App extends Component {
 
+  
+
   constructor(props) {
     super(props)
     this.state = {
@@ -134,7 +139,16 @@ class App extends Component {
     ReactModal.setAppElement('#modal')
  }
 
+ 
+
+
+
   render() {
+    if (!isAuthenticated()) {
+      login()
+      return <p>Redirecting to login...</p>
+    }
+    console.log(localStorage)
     return (
       <div>
         <Global
@@ -177,6 +191,8 @@ class App extends Component {
 }
 
 function Hit(props) {
+  var surgerydate = moment(props.hit.surgerydate*1000).format(`MMMM DD, YYYY`)
+  var date = moment(props.hit.surgerydate*1000).format(`MMMM DD, YYYY`)
   return (
     <Link className="image-result" to={props.hit.slug}
     asModal
@@ -190,8 +206,8 @@ function Hit(props) {
       <div className="search-title">
       <h4><Highlight attribute="procedure" hit={props.hit} /></h4>
       <div><span class="thelabel"><strong>Patient Name:</strong> </span><Highlight className="search-name" attribute="patientname" hit={props.hit} /></div>
-      <div><span class="thelabel"><strong>Surgery Date:</strong> </span><Highlight className="search-surgery-date" attribute="surgerydate" hit={props.hit} /></div>
-      <div><span class="thelabel"><strong>Photo Date:</strong> </span><Highlight className="search-photo-date" attribute="date" hit={props.hit} /></div>
+      <div><span class="thelabel"><strong>Surgery Date:</strong> </span><span className="search-surgery-date">{surgerydate}</span></div>
+      <div><span class="thelabel"><strong>Photo Date:</strong> </span><span className="search-photo-date">{date}</span></div>
       <div><span class="thelabel"><strong>Post-Op Time Frame:</strong> </span><Highlight className="search-post-op" attribute="postop" hit={props.hit} /></div>
       <div><span class="thelabel"><strong>Surgeon Name:</strong> </span><Highlight className="search-surgeon-name" attribute="doctor" hit={props.hit} /></div>
     </div>
