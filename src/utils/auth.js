@@ -5,9 +5,9 @@ const isBrowser = typeof window !== "undefined"
 
 const auth = isBrowser
   ? new auth0.WebAuth({
-      domain: 'fountain1986.auth0.com',
-      clientID: 'd2HtbVJm1vlrRL4g4x82d1JPzL8ttXMN',
-      redirectUri: 'https://jw-search.netlify.com/callback',
+      domain: 'dev-cqukfs10.auth0.com',
+      clientID: 'ymj5CYQpkjgK6WnnTDFajO1ncEUnyGoO',
+      redirectUri: 'https://jwsearch2.netlify.com/callback',
       responseType: "token id_token",
       scope: "openid profile email",
     })
@@ -109,6 +109,6 @@ const auth = isBrowser
     localStorage.setItem("isLoggedIn", false)
 
     auth.logout({
-      returnTo: 'https://jw-search.netlify.com',
+      returnTo: 'https://jwsearch2.netlify.com',
     })
   }
