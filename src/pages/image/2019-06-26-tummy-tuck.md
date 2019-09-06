@@ -1,6 +1,7 @@
 ---
 templateKey: image-post
 title: 'Tummy Tuck '
+subtitle: Tummy
 patientname: Amelia A
 doctor: Dr. Jeffery Weinzweig
 surgeryarea: Body
