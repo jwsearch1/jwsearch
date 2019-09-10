@@ -4,7 +4,7 @@ title: 'Tummy Tuck '
 patientname: Amelia A
 doctor: Dr. Jeffrey Weinzweig
 surgeryarea: Body
-procedure: Abdominoplasty
+procedure: Liposuction
 postop: 1 wk post-op
 date: '1551765600'
 surgerydate: '1568437200'
