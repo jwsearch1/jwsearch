@@ -1,9 +1,8 @@
 ---
 templateKey: image-post
 title: 'Tummy Tuck '
-subtitle: Tummy
 patientname: Amelia A
-doctor: Dr. Jeffery Weinzweig
+doctor: Dr. Jeffrey Weinzweig
 surgeryarea: Body
 procedure: Abdominoplasty
 postop: 1 wk post-op
