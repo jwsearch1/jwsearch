@@ -1,9 +1,8 @@
 ---
 templateKey: image-post
 title: 'Breast Augmentation '
-subtitle: Augmentation
 patientname: Fountain A
-doctor: Dr. Jeffery Weinzweig
+doctor: Dr. Jeffrey Weinzweig
 surgeryarea: Breast
 procedure: Breast Lift
 postop: 1 wk post-op
