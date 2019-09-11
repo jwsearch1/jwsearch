@@ -2,7 +2,7 @@
 templateKey: image-post
 title: 'Tummy Tuck '
 patientname: Amelia A
-doctor: Dr. Jeffrey Weinzweig
+doctor: Dr. Jeffery Weinzweig
 surgeryarea: Body
 procedure: Liposuction
 postop: 1 wk post-op
