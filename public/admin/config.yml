@@ -11,6 +11,7 @@ collections:
     folder: "src/pages/doctor"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    output: false
     identifier_field: name
     fields:
         - {label: "Name", name: "name", widget: "string"}
@@ -20,6 +21,7 @@ collections:
     folder: "src/pages/procedure"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    output: false
     identifier_field: name
     fields:
         - {label: "Name", name: "name", widget: "string"}      
