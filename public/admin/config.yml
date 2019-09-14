@@ -14,6 +14,7 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "image-post"}
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Sub Title", name: "subtitle", widget: "string"}
       - {label: "Patient Name", name: "patientname", widget: "string"}
       - {label: "Surgeon Name", name: "doctor", widget: "select", options: ["Dr. Jeffery Weinzweig"]}
       - {label: "Surgery Area(s)", name: "surgeryarea", widget: "select", options: ["Breast", "Body", "Face"]}
