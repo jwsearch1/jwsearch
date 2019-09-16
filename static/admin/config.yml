@@ -6,6 +6,24 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
+  - name: "doctor"
+    label: "Doctor"
+    folder: "src/pages/doctor"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: name
+    fields:
+      - {label: "Dr. Name", name: "name", widget: "string"}
+  
+  - name: "procedure"
+    label: "Procedure"
+    folder: "src/pages/procedure"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: name
+    fields:
+      - {label: "Procedure Name", name: "name", widget: "string"}
+
   - name: "image"
     label: "Image"
     folder: "src/pages/image"
@@ -15,9 +33,9 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "image-post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Patient Name", name: "patientname", widget: "string"}
-      - {label: "Surgeon Name", name: "doctor", widget: "select", options: ["Dr. Jeffery Weinzweig"]}
+      - {label: "Surgeon Name", name: "doctor", widget: "relation", collection: "doctor", searchFields: ["name"], valueField: "name", displayFields: ["name"]}
       - {label: "Surgery Area(s)", name: "surgeryarea", widget: "select", options: ["Breast", "Body", "Face"]}
-      - {label: "Procedure Name", name: "procedure", widget: "select", options: ["Breast Lift", "Breast Augmentation", "Breast Reduction","Liposuction", "Abdominoplasty", "Thigh Lift","Arm Lift", "BBL", "Fat Transfer", "Nose Surgery", "Facelift", "Ear Surgery", "Lip Lift", "FFS", "Chin Surgery", "Forehead Lift", "Cheek Augmentation"]}
+      - {label: "Procedure Name", name: "procedure", widget: "relation", collection: "procedure", searchFields: ["name"], valueField: "name", displayFields: ["name"]}
       - {label: "POST-OP Time Frame", name: "postop", widget: "select", options: ["Pre-Op", "1 wk post-op", "2 wk post-op", "3 mo post-op", "4 mo post-op", "5 mo post-op", "6 mo post-op","7 mo post-op","8 mo post-op","9 mo post-op","10 mo post-op","11 mo post-op","12 mo post-op"]}
       - {label: "Photo Date", name: "date", widget: "datetime", format: "X"}
       - {label: "Surgery Date", name: "surgerydate", widget: "datetime", format: "X"}
