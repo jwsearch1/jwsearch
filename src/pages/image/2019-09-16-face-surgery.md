@@ -2,9 +2,9 @@
 templateKey: image-post
 title: Face Surgery
 patientname: JW Developer
-doctor: Dr. Jeffery Weinzweig
+doctor: Dr. Bradley Ashpole
 surgeryarea: Face
-procedure: Facelift
+procedure: Face Lift
 postop: 1 wk post-op
 date: '1568631279'
 surgerydate: '1568631279'
