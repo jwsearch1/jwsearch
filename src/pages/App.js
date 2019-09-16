@@ -172,7 +172,7 @@ class App extends Component {
           </div>
           <div className="below-header">
           <div className="search-box">
-          <h1>JW Image seach..</h1>
+          <h1>JW Image seach.</h1>
           <SearchBox />
           </div>
           </div>
