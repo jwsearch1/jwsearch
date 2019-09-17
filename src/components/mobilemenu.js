@@ -103,7 +103,7 @@ const Mobilemenu = () => (
             <div className="filters-inner">
               <div className="filter-procedure">
                 <h3>Procedure</h3>
-                <RefinementList attribute="procedure" defaultRefinement={['Face Lift']} />
+                <RefinementList attribute="procedure" />
               </div>
               <div className="filter-doctor">
                 <h3>Surgeon</h3>
