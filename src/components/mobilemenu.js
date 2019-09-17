@@ -67,6 +67,10 @@ const MobileContainer = styled.div`
     text-decoration:none;
     text-transform:uppercase;
   }
+  .inline-block{display:inline;}
+  .clear-filter{float:right;} 
+  .clear-filter button{color:#fff;}
+  .clearfix{ clear: both;display: block;content: "";}
 `;
 
 const Mobilemenu = () => (
@@ -91,17 +95,21 @@ const Mobilemenu = () => (
     </a>
     <Menu right>
           <SearchFilter className="filters">
-            <h2>Filter</h2>
+            <h2 className="inline-block">Filter</h2>
+            <div className="clear-filter">
+                <ClearRefinements translations={{ reset: 'Clear',}}/>            
+            </div>
+            <div className="clearfix"></div>
             <div className="filters-inner">
-            <div className="filter-procedure">
-            <h3>Procedure</h3>
-            <RefinementList attribute="procedure" />
-            </div>
-            <div className="filter-doctor">
-            <h3>Surgeon</h3>
-            <RefinementList attribute="doctor" />
-            </div>
-            <SortBy
+              <div className="filter-procedure">
+                <h3>Procedure</h3>
+                <RefinementList attribute="procedure" defaultRefinement={['Face Lift']} />
+              </div>
+              <div className="filter-doctor">
+                <h3>Surgeon</h3>
+                <RefinementList attribute="doctor" />
+              </div>
+              <SortBy
               defaultRefinement="Images"
                 items={[
                   { value: 'Images', label: 'Sort by Photo Date' },

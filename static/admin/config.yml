@@ -34,8 +34,8 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Patient Name", name: "patientname", widget: "string"}
       - {label: "Surgeon Name", name: "doctor", widget: "relation", collection: "doctor", searchFields: ["name"], valueField: "name", displayFields: ["name"]}
-      - {label: "Surgery Area(s)", name: "surgeryarea", widget: "select", options: ["Breast", "Body", "Face"]}
-      - {label: "Procedure Name", name: "procedure", widget: "relation", collection: "procedure", searchFields: ["name"], valueField: "name", displayFields: ["name"]}
+      - {label: "Surgery Area(s)", name: "surgeryarea", widget: "select", multiple: true, options: ["Breast", "Body", "Face"]}
+      - {label: "Procedure Name", name: "procedure",  widget: "relation", multiple: true, collection: "procedure", searchFields: ["name"], valueField: "name", displayFields: ["name"]}
       - {label: "POST-OP Time Frame", name: "postop", widget: "select", options: ["Pre-Op", "1 wk post-op", "2 wk post-op", "3 mo post-op", "4 mo post-op", "5 mo post-op", "6 mo post-op","7 mo post-op","8 mo post-op","9 mo post-op","10 mo post-op","11 mo post-op","12 mo post-op"]}
       - {label: "Photo Date", name: "date", widget: "datetime", format: "X"}
       - {label: "Surgery Date", name: "surgerydate", widget: "datetime", format: "X"}
