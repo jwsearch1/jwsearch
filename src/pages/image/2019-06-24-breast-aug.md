@@ -3,8 +3,10 @@ templateKey: image-post
 title: Breast Aug
 patientname: Cole P
 doctor: Dr. Jeffery Weinzweig
-surgeryarea: Body
-procedure: Breast Augmentation
+surgeryarea:
+  - Breast
+procedure:
+  - Breast Augmentation
 postop: 4 mo post-op
 date: '1562216400'
 surgerydate: '1564462800'
