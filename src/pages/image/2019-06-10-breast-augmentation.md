@@ -3,8 +3,11 @@ templateKey: image-post
 title: 'Breast Augmentation '
 patientname: Fountain A
 doctor: Dr. Jeffery Weinzweig
-surgeryarea: Breast
-procedure: Breast Lift
+surgeryarea:
+  - Breast
+procedure:
+  - Breast Augmentation
+  - Breast Lift
 postop: 1 wk post-op
 date: '1554872400'
 surgerydate: '1564203600'
